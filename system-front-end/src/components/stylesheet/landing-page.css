@@ -1,0 +1,134 @@
+.main-canvas{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline-block;
+    background-color: #E8F3F5;
+}
+
+.banner{
+    width: 97vw;
+    margin-left: 3vw;
+}
+
+.main-title{
+    color: #144A5D;
+    font-size: 3.2em;
+    font-weight: 500;
+    margin-left: 8vw;
+    position: absolute;
+    top: 9.5vh;
+}
+
+.main-description{
+    color: #293450;
+    font-weight: 300;
+    font-size: 1.6em;
+    margin-left: 8vw;
+    position: absolute;
+    top: 15.5vh;
+    width: 49vw;
+    line-height: 1.8em;
+}
+
+.main-button{
+    border-radius: 20px;
+    background: #055596;
+    border: none;
+    height: 3.3vh;
+    line-height: 3.3vh;
+    text-align: center;
+    width: 25vw;
+    color: white;
+    font-size: 1.55em;
+    margin-left: 8vw;
+    position: absolute;
+    top: 25vh;
+    cursor: pointer;
+}
+
+.main-button:hover{
+    opacity: 0.85;
+    transition: 0.3s;
+}
+
+.main-box{
+    width: 94vw;
+    margin-left: 3vw;
+    height: 67vh;
+    margin-top: -1.5vh;
+    background-color: white;
+    border-radius: 42px 42px 0 0;
+    z-index: 10;
+    position: absolute;
+}
+
+.box-title{
+    color: #237590;
+    font-size: 2.1em;
+    font-weight: 500;
+    margin-top: 3.8vh;
+    margin-left: 7vw;
+}
+
+.box-card-row{
+    display: inline-flex;
+}
+
+.box-card{
+    background-color: white;
+    width: 25vw;
+    height: 22vh;
+    margin-left: 4vw;
+    box-shadow: 0 7px 14px 0 rgba(96, 94, 94, 0.12);
+    border-radius: 26px;
+    display: block;
+}
+
+.icon-bg{
+    background-color: #E3F8F8;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    margin-left: 5vh;
+    margin-top: 1.5vh;
+    color: #1FB4BB;
+    font-size: 3em;
+    text-align: center;
+    line-height: 10vw;
+}
+
+.card-title{
+    color: #144A5D;
+    font-size: 1.6em;
+    font-weight: 500;
+    width: 25vw;
+    text-align: center;
+    margin-top: 1.7vh;
+}
+
+.card-description{
+    color: #144A5D;
+    font-size: 1.45em;
+    font-weight: 300;
+    margin-top: 1.5vh;
+    width: 16vw;
+    margin-left: 4.5vw;
+    line-height: 1.6em;
+}
+
+.know-more-button{
+    color: #1FB4BB;
+    font-size: 1.25em;
+    width: 10vw;
+    text-align: center;
+    margin-left: 7.5vw;
+    text-decoration: underline;
+    margin-top: 2.2vh;
+    cursor: pointer;
+}
