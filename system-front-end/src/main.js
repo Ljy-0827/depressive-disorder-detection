@@ -12,6 +12,7 @@ import Step1Questionnaire from "./components/Step1Questionnaire.vue";
 import Step2PicWatch from "./components/Step2PicWatch.vue";
 import Step3TextRead from "./components/Step3TextRead.vue";
 import Step4FaceDescribe from "./components/Step4FaceDescribe.vue";
+import Step5Interview from "./components/Step5Interview.vue";
 
 const myRouter = createRouter({
     mode: 'history',
@@ -41,6 +42,11 @@ const myRouter = createRouter({
             path: '/step4_facedescribe',
             name: 'step4-facedescribe',
             component: Step4FaceDescribe,
+        },
+        {
+            path: '/step5_interview',
+            name: 'step5-interview',
+            component: Step5Interview,
         },
     ]
 })
