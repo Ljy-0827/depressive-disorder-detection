@@ -8,6 +8,7 @@ import 'element-plus/dist/index.css';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import LandingPage from "./components/LandingPage.vue";
+import Step1Questionnaire from "./components/Step1Questionnaire.vue";
 
 const myRouter = createRouter({
     mode: 'history',
@@ -17,6 +18,11 @@ const myRouter = createRouter({
             path: '/',
             name: 'landing-page',
             component: LandingPage
+        },
+        {
+            path: '/step1_questionnaire',
+            name: 'step1-questionnaire',
+            component: Step1Questionnaire,
         },
     ]
 })
