@@ -9,6 +9,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import LandingPage from "./components/LandingPage.vue";
 import Step1Questionnaire from "./components/Step1Questionnaire.vue";
+import Step2PicWatch from "./components/Step2PicWatch.vue";
 
 const myRouter = createRouter({
     mode: 'history',
@@ -23,6 +24,11 @@ const myRouter = createRouter({
             path: '/step1_questionnaire',
             name: 'step1-questionnaire',
             component: Step1Questionnaire,
+        },
+        {
+            path: '/step2_picwatch',
+            name: 'step2-picwatch',
+            component: Step2PicWatch,
         },
     ]
 })
