@@ -1,0 +1,226 @@
+.main-canvas{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline-block;
+}
+
+.step-box{
+    width: 86vw;
+    margin-left: 3vw;
+}
+
+.mask{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+    background-color: rgba(168, 171, 178, 0.05);
+}
+
+:deep .el-loading-spinner{
+    margin-top: calc((0px - var(--el-loading-spinner-size))/ 2 - 40px);
+}
+
+:deep .el-loading-spinner .path{
+    stroke: #1FB4BB !important;
+}
+
+:deep .el-loading-spinner .el-loading-text{
+    color: #1FB4BB;
+    font-size: 18px;
+    font-weight: 450;
+    margin-top: 10px;
+}
+
+:deep .el-step__head.is-success{
+    color: white;
+    border-color: #293450;
+}
+
+:deep .el-step__head.is-success .el-step__icon.is-text{
+    background-color: #293450;
+    width: 2.8vw;
+    height: 2.8vw;
+}
+
+#result-step :deep .el-step__icon.is-text{
+    background-color: #1FB4BB;
+    width: 2.8vw;
+    height: 2.8vw;
+}
+
+#result-step :deep .el-step__icon-inner{
+    color: #1FB4BB;
+}
+
+:deep .el-step__icon.is-text{
+    background-color: white;
+    width: 2.8vw;
+    height: 2.8vw;
+    border-color: #293450;
+    color: white;
+}
+
+:deep .el-step__title.is-success{
+    color:#293450;
+    font-size: 1.35em;
+    margin-top: 0.6vh;
+    font-weight: 350;
+}
+
+:deep .el-step__title.is-wait{
+    color:#293450;
+    font-size: 1.35em;
+    margin-top: 0.6vh;
+    font-weight: 350;
+}
+
+:deep .el-step__title.is-process{
+    color:#293450;
+    font-size: 1.35em;
+    margin-top: 0.6vh;
+    font-weight: 350;
+}
+
+.step-box-bg{
+    background-color: #F0FBFB;
+    border-radius: 0 30px 30px 30px;
+    width: 92vw;
+    margin-left: 4vw;
+    height: 7.6vh;
+    padding-top: 3.5vh;
+    margin-top: 2vh;
+}
+
+.main-title{
+    color: #237590;
+    text-align: center;
+    width: 100%;
+    font-size: 2.8em;
+    font-weight: 500;
+    margin-top: 4.5vh;
+}
+
+.explain-box{
+    display: inline-flex;
+    width: 78vw;
+    margin-left: 11vw;
+    height: 10vh;
+    margin-top: 4vh;
+}
+
+.explain-box-left{
+    border-radius: 26px;
+    background: white;
+    box-shadow: 0 6px 20px 0 rgba(96, 94, 94, 0.18);
+    width: 54vw;
+    height: 8vh;
+}
+
+.explain-box-left-text{
+    color: #293450;
+    font-size: 1.6em;
+    width: 45vw;
+    line-height: 1.9em;
+    margin-left: 4.5vw;
+    margin-top: calc((8vh - 1.9em) / 2);
+    font-weight: 350;
+}
+
+.explain-box-right{
+    border-radius: 26px 26px 26px 0;
+    background: #1FB4BB;
+    width: 24vw;
+    height: 8vh;
+}
+
+.test-mic-button{
+    border-radius: 12px;
+    background: #055596;
+    border: none;
+    height: 3.5vh;
+    width: 16vw;
+    color: white;
+    font-size: 1.4em;
+    margin-left: 4vw;
+    margin-top: 2.25vh;
+}
+
+.test-mic-button:hover{
+    opacity: 0.85;
+}
+
+.mix-box{
+    width: 88vw;
+    margin-left: 6vw;
+    height: 38vh;
+    display: inline-flex;
+    margin-top: 3vh;
+}
+
+.text-box{
+    border: dashed 1px #055596;
+    border-radius: 20px;
+    width: 72vw;
+    height: calc(100% - 2px);
+}
+
+.read-text{
+    margin-left: 6vw;
+    margin-right: 6vw;
+    margin-top: 4vw;
+    font-size: 1.6em;
+    color: #293450;
+    line-height: 2.1em;
+    white-space: pre-wrap;
+}
+
+.back-box{
+    width: calc(8vw - 1px);
+    height: 100%;
+    font-size: 2.8em;
+    text-align: center;
+    line-height: 5.5vw;
+    color: #1FB4BB;
+}
+
+.next-box{
+    width: calc(8vw - 1px);
+    height: 100%;
+    font-size: 2.8em;
+    text-align: center;
+    line-height: 5.5vw;
+    color: #1FB4BB;
+}
+
+.page-button{
+    background-color: #E3F8F8;
+    border: solid 1px #1FB4BB;
+    width: 5.5vw;
+    height: 5.5vw;
+    border-radius: 50%;
+    margin-top: calc((38vh - 6vw) / 2);
+}
+
+.read-button{
+    width: 60vw;
+    height: 4.2vh;
+    background-color: #055596;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    line-height: 4.2vh;
+    margin-left: 20vw;
+    margin-top: 7vh;
+    font-size: 1.8em;
+}
+
+.read-button:hover{
+    opacity: 0.9;
+}

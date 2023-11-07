@@ -10,6 +10,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import LandingPage from "./components/LandingPage.vue";
 import Step1Questionnaire from "./components/Step1Questionnaire.vue";
 import Step2PicWatch from "./components/Step2PicWatch.vue";
+import Step3TextRead from "./components/Step3TextRead.vue";
 
 const myRouter = createRouter({
     mode: 'history',
@@ -29,6 +30,11 @@ const myRouter = createRouter({
             path: '/step2_picwatch',
             name: 'step2-picwatch',
             component: Step2PicWatch,
+        },
+        {
+            path: '/step3_textread',
+            name: 'step3-textread',
+            component: Step3TextRead,
         },
     ]
 })
