@@ -1,0 +1,277 @@
+.main-canvas{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline-block;
+}
+
+.step-box{
+    width: 84vw;
+    margin-left: 8vw;
+    margin-top: 3.5vh;
+}
+
+:deep .el-step__head.is-success{
+    color: white;
+    border-color: #293450;
+}
+
+#result-step :deep .el-step__icon.is-text{
+    background-color: #1FB4BB;
+    width: 2.8vw;
+    height: 2.8vw;
+    border: solid 3px;
+}
+
+#result-step :deep .el-step__icon-inner{
+    color: #1FB4BB;
+}
+
+:deep .el-step__icon.is-text{
+    background-color: #293450;
+    width: 2.8vw;
+    height: 2.8vw;
+}
+
+:deep .el-step__title.is-success{
+    color:#293450;
+    font-size: 1.35em;
+    margin-top: 0.6vh;
+    font-weight: 350;
+}
+
+:deep .el-step__title.is-process{
+    color:#293450;
+    font-size: 1.35em;
+    margin-top: 0.6vh;
+    font-weight: 350;
+}
+
+.title1{
+    color: #237590;
+    font-size: 2.8em;
+    font-weight: 550;
+    margin-top: 4vh;
+    margin-left: 5vw;
+}
+
+.title2{
+    color: #237590;
+    font-size: 2.2em;
+    font-weight: 500;
+    margin-top: 8.5vh;
+    margin-left: 5vw;
+}
+
+.title3{
+    color: #237590;
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-left: 5vw;
+    margin-bottom: 0.2vh;
+    margin-top: 0.3vh;
+}
+
+.result-text-title{
+    color: white;
+    font-size: 2.4em;
+    font-weight: 500;
+}
+
+.score-text-title{
+    color: white;
+    font-size: 2.4em;
+    font-weight: 500;
+    line-height: 6.5vh;
+}
+
+.score-text{
+    font-size: 1.5em;
+    color: white;
+    font-weight: 350;
+    line-height: 6.5vh;
+}
+
+.result-text{
+    font-size: 1.5em;
+    color: white;
+    font-weight: 300;
+    margin-bottom: 0.5vh;
+}
+
+.main-box{
+    background-color: #1FB4BB;
+    border-radius: 24px 24px 24px 0;
+    width: 76vw;
+    height: 9vh;
+    margin-left: 12vw;
+    display: inline-flex;
+    margin-top: 4vh;
+}
+
+.main-box-text-box{
+    display: inline-block;
+    margin-left: 5vw;
+    margin-top: 2.05vh;
+    width: 51vw;
+}
+
+.doctor-button{
+    background-color: #055596;
+    border-radius: 16px;
+    width: 16vw;
+    height: 4vh;
+    margin-top: 2.5vh;
+    display: inline-flex;
+    color: white;
+    font-size: 1.5em;
+    line-height: 4vh;
+    justify-content: center;
+    font-weight: 350;
+    cursor: pointer;
+}
+
+.doctor-button:hover{
+    opacity: 0.85;
+    transition: 0.3s;
+}
+
+.multifunctional-box{
+    width: 68vw;
+    height: 7vh;
+    margin-left: 16vw;
+    display: inline-flex;
+    margin-top: 2.5vh;
+}
+
+.score-box{
+    background-color: #055596;
+    border-radius: 20px;
+    display: inline-flex;
+    height: 6.5vh;
+    width: 26vw;
+    justify-content: center;
+    margin-right: 1.5vw;
+}
+
+.function-button{
+    width: 18.25vw;
+    margin-left: 2vw;
+    background-color: #E3F8F8;
+    border-radius: 14px;
+    height: calc(2.8vh - 2px);
+    color: #1FB4BB;
+    font-size: 1.4em;
+    line-height: calc(2.8vh - 2px);
+    text-align: center;
+    font-weight: 350;
+    border: solid 1px #E3F8F8;
+    cursor: pointer;
+}
+
+
+.function-button:hover{
+    border:solid 1px #1FB4BB;
+    transition: 0.3s;
+}
+
+
+.function-button-vertical-group{
+    display: inline-block;
+    width: 42.5vw;
+}
+
+.function-button-horizontal-group{
+    display: inline-flex;
+}
+
+.text-box1{
+    font-size: 1.55em;
+    width: 74vw;
+    margin-left: 13vw;
+    color: #293450;
+    line-height: 1.9em;
+    font-weight: 450;
+    margin-top: 4vh;
+}
+
+.text-box1 span{
+    color: #3F92D6;
+    text-decoration: underline;
+}
+
+#green-span{
+    color: #1FB4BB;
+    text-decoration: none;
+}
+
+.text-box2{
+    color: #293450;
+    width: 74vw;
+    margin-left: 13vw;
+    margin-top: 3vh;
+    line-height: 1.9em;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.text-box3{
+    width: 74vw;
+    margin-left: 13vw;
+    margin-top: 5.5vh;
+    line-height: 1.85em;
+    font-size: 1.3em;
+    font-weight: 300;
+    color: #9297A5;
+    opacity: 0.8;
+}
+
+.text-ul{
+    margin-left: -1vw;
+    margin-top: 0.8vh;
+}
+
+.text-li{
+    line-height: 2.05em;
+}
+
+.post-info-box{
+    width: 90vw;
+    height: 15.7vh;
+    margin-left: 5vw;
+    margin-top: 1vh;
+    background-color: #E3F8F8;
+    border-radius: 0 36px 36px 36px;
+    display: inline-block;
+    padding-top: 1.5vh;
+}
+
+.button-horizontal-group{
+    display: inline-flex;
+    margin-top: 1vh;
+    margin-left: 2vw;
+}
+
+.button-link{
+    background-color: #1FB4BB;
+    height: 2.7vh;
+    padding-right: 3.5vw;
+    padding-left: 3.5vw;
+    color: white;
+    font-size: 1.4em;
+    line-height: 2.7vh;
+    border-radius: 24px;
+    margin-left: 3vw;
+    font-weight: 350;
+    cursor: pointer;
+}
+
+.button-link:hover{
+    opacity: 0.85;
+    transition: 0.3s;
+}
