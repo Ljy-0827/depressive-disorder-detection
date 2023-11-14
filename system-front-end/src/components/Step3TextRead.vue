@@ -83,6 +83,7 @@ export default {
       this.isLastPage = true;
     },
 
+
     startRecording() {
       navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
         this.isRecording = true;
@@ -114,12 +115,13 @@ export default {
       }
     },
 
+
     async sendAudioToBackend() {
       this.isUploading = true;
       try {
         const blob = new Blob(this.audioChunks, {type: 'audio/wav'});
         const formData = new FormData();
-        formData.append('audio', blob, 'step3-audio.wav');
+        formData.append('audio', blob, 'readtext_audio.wav');
 
         const response = await fetch(`http://${ipAddress}/upload-audio`, {
           method: "POST",

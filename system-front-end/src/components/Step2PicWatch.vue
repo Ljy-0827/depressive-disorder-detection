@@ -164,7 +164,7 @@ export default {
       try {
         const blob = new Blob(this.chunks, {type: 'video/webm'});
         const formData = new FormData();
-        formData.append('video', blob, 'recorded-video.webm');
+        formData.append('video', blob, 'picwatch_video.webm');
 
         // 使用fetch API将数据POST到后端
         const response = await fetch(`http://${ipAddress}/upload-video`, {
@@ -182,7 +182,7 @@ export default {
           this.allowNextStep = true;
           // 清空chunks数组，准备进行下一次录制
           this.chunks = [];
-          this.$router.push('/result');
+          this.$router.push('/step3_textread');
         } else {
           ElMessage.error('视频上传失败');
           console.error('视频上传失败：', response.statusText);

@@ -55,7 +55,8 @@
 </template>
 
 <script>
-import {interviewQuestions} from "../utils.js";
+import {interviewQuestions, ipAddress} from "../utils.js";
+import {ElMessage} from "element-plus";
 
 export default {
   name: "Step5Interview",
@@ -153,7 +154,38 @@ export default {
       this.audioElement = null;
       this.startRecording();
     },
+    async sendAudioToBackend() {
+      try {
+        const blob = new Blob(this.audioChunks, {type: 'audio/wav'});
+        const formData = new FormData();
+        formData.append('audio', blob, `interview${this.questionAnswering + 1}_audio.wav`);
+
+        const response = await fetch(`http://${ipAddress}/upload-audio`, {
+          method: "POST",
+          body: formData,
+        });
+
+        if (response.ok) {
+          ElMessage({
+            message: '录音已成功上传',
+            type: 'success',
+          });
+          this.isUploading = false;
+          if(this.questionAnswering === this.questionAndAnswer.length - 1){
+            this.$router.push('/result');
+          }
+          //this.$router.push({name: 'step-complete', query: {currentPage: '4'}});
+        } else {
+          ElMessage.error('录音上传失败');
+          this.isUploading = false;
+        }
+      } catch (error) {
+        ElMessage.error('录音上传失败');
+        this.isUploading = false;
+      }
+    },
     moveToNextQuestion(){
+      this.sendAudioToBackend();
       this.questionAndAnswer[this.questionAnswering].status = true;
       this.questionAnswering ++;
       this.questionAndAnswer[this.questionAnswering].isReadyShow = true;

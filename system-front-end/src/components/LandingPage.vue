@@ -3,25 +3,23 @@
     <img class="banner" src="../assets/setting-pic/landing-page-banner.png" alt="" />
     <div class="main-title">抑郁症多模态检测系统</div>
     <div class="main-description">内容描述占位内容描述占位内容描述内容描述占位内容描述占位内容描述</div>
-    <div class="main-button" @click="start">开始检测</div>
+
+    <div class="main-button" @click="start">综合检测</div>
+    <el-checkbox class="questionnaire-checkbox" v-model="this.isQuestionnaire" label="量表测试"></el-checkbox>
     <div class="main-box">
-      <div class="box-title">五项测试为您提供全面检测</div>
+      <div class="box-title">多维度测试为您提供深入检测</div>
+      <div class="box-border"></div>
       <div class="box-card-row" style="margin-left: 5.5vw; margin-top: 4vh">
         <div class="box-card" style="margin-left: 0">
-          <div class="icon-bg">
-            <i class="bi bi-clipboard-pulse"></i>
-          </div>
-          <div class="card-title">量表填写</div>
-          <div class="card-description">内容描述占位内容描述占位</div>
-          <div class="know-more-button">了解更多</div>
-        </div>
-        <div class="box-card">
           <div class="icon-bg">
             <i class="bi bi-easel2"></i>
           </div>
           <div class="card-title">情绪图片观看</div>
           <div class="card-description">内容描述占位内容描述占位</div>
+          <button class="single-test-button">单项测试</button>
+          <!--
           <div class="know-more-button">了解更多</div>
+          -->
         </div>
         <div class="box-card">
           <div class="icon-bg">
@@ -29,25 +27,42 @@
           </div>
           <div class="card-title">文字朗读</div>
           <div class="card-description">内容描述占位内容描述占位</div>
-          <div class="know-more-button">了解更多</div>
-        </div>
-      </div>
-      <div class="box-card-row" style="margin-left: 20vw; margin-top: 4vh">
-        <div class="box-card" style="margin-left: 0">
-          <div class="icon-bg">
-            <i class="bi bi-emoji-wink"></i>
-          </div>
-          <div class="card-title">人脸图片描述</div>
-          <div class="card-description">内容描述占位内容描述占位</div>
-          <div class="know-more-button">了解更多</div>
+          <button class="single-test-button">单项测试</button>
         </div>
         <div class="box-card">
           <div class="icon-bg">
-            <i class="bi bi-chat-right-dots"></i>
+            <i class="bi bi-emoji-wink "></i>
+          </div>
+          <div class="card-title">人脸图片描述</div>
+          <div class="card-description">内容描述占位内容描述占位</div>
+          <button class="single-test-button">单项测试</button>
+          <!--
+          <div class="know-more-button">了解更多</div>
+          -->
+        </div>
+      </div>
+      <div class="box-card-row" style="margin-left: 5.5vw; margin-top: 5vh">
+        <div class="box-card-large" style="margin-left: 0">
+          <div class="icon-bg-large">
+            <i class="bi bi-chat-right-dots "></i>
           </div>
           <div class="card-title">机器人访谈</div>
-          <div class="card-description">内容描述占位内容描述占位</div>
+          <div class="card-description-large">与虚拟人进行深度访谈以进一步了解您的情绪特征</div>
+          <!--
           <div class="know-more-button">了解更多</div>
+          -->
+          <button class="single-test-button">单项测试</button>
+        </div>
+        <div class="box-card-large">
+          <div class="icon-bg-large">
+            <i class="bi bi-clipboard-pulse"></i>
+          </div>
+          <div class="card-title">量表填写</div>
+          <div class="card-description-large">使用PH-9量表进行全面的测评与数据分析</div>
+          <button class="single-test-button">单项测试</button>
+          <!--
+          <div class="know-more-button">了解更多</div>
+          -->
         </div>
       </div>
     </div>
@@ -59,7 +74,7 @@ export default {
   name: "LandingPage",
   data(){
     return{
-
+      isQuestionnaire: true,
     }
   },
   methods:{

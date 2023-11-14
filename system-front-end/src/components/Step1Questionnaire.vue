@@ -64,7 +64,7 @@ export default {
   methods:{
     postDataToBackend(){
       console.log(this.answer)
-      fetch(`http://${ipAddress}/upload-answer`, {
+      fetch(`http://${ipAddress}/upload-questionnaire-answer`, {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
@@ -73,9 +73,9 @@ export default {
       })
           .then(response => {
             if (response.ok) {
-              console.log('JSON data sent successfully!');
+              console.log('questionnaire answer JSON data sent successfully');
               this.isUploading = false;
-              this.$router.push('/2');
+              this.$router.push('/step2_picwatch');
             } else {
               console.error('Failed to send JSON data to backend.');
             }

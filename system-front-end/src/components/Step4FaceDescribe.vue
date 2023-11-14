@@ -121,7 +121,7 @@ export default {
       try {
         const blob = new Blob(this.audioChunks, {type: 'audio/wav'});
         const formData = new FormData();
-        formData.append('audio', blob, 'step4-audio.wav');
+        formData.append('audio', blob, 'facedescribe_audio.wav');
 
         const response = await fetch(`http://${ipAddress}/upload-audio`, {
           method: "POST",
@@ -134,7 +134,7 @@ export default {
             type: 'success',
           });
           this.isUploading = false;
-          this.$router.push({name: 'step-complete', query: {currentPage: '4'}});
+          //this.$router.push({name: 'step-complete', query: {currentPage: '4'}});
         } else {
           ElMessage.error('录音上传失败');
           this.isUploading = false;

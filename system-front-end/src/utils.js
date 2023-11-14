@@ -1,7 +1,8 @@
 //export const ipAddress = '192.168.31.23:8080';
 //export const ipAddress = '39.105.149.134:8083';
 //export const ipAddress = '140.143.143.190:8080';
-export const ipAddress = '10.19.46.177:8080';
+//export const ipAddress = '10.19.46.177:8080';
+export const ipAddress = '10.19.36.185:8080';
 
 export function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
