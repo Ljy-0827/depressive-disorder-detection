@@ -9,7 +9,9 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import LandingPage from "./components/LandingPage.vue";
 import Step1Questionnaire from "./components/Step1Questionnaire.vue";
+import SingleQuestionnaire from "./components/SingleQuestionnaire.vue";
 import Step2PicWatch from "./components/Step2PicWatch.vue";
+import SinglePicWatch from "./components/SinglePicWatch.vue";
 import Step3TextRead from "./components/Step3TextRead.vue";
 import Step4FaceDescribe from "./components/Step4FaceDescribe.vue";
 import Step5Interview from "./components/Step5Interview.vue";
@@ -30,9 +32,20 @@ const myRouter = createRouter({
             component: Step1Questionnaire,
         },
         {
+            path: '/questionnaire',
+            name: 'questionnaire',
+            component: SingleQuestionnaire,
+        },
+
+        {
             path: '/step2_picwatch',
             name: 'step2-picwatch',
             component: Step2PicWatch,
+        },
+        {
+            path: '/picwatch',
+            name: 'picwatch',
+            component: SinglePicWatch,
         },
         {
             path: '/step3_textread',

@@ -1,18 +1,20 @@
 <template>
-  <div class="main-canvas" style="border: solid 1px gray">
+  <div class="main-canvas">
     <div class="mask" v-loading="isUploading"
          element-loading-text="请稍等，数据正在上传中" v-if="isUploading" >
     </div>
-    <div class="step-box-bg">
-      <div class="step-box">
-        <el-steps :active="0" finish-status="success" align-center>
-          <el-step id="result-step" title="量表填写" />
-          <el-step title="情绪图片观看" />
-          <el-step title="文字朗读" />
-          <el-step title="人脸图片描述" />
-          <el-step title="机器人访谈" />
-          <el-step title="您的结果" />
-        </el-steps>
+    <div class="top-box">
+      <div class="back-button" @click="backToLandingPage">
+        <i class="bi bi-house-door"></i>
+      </div>
+      <div class="back-button-text" @click="backToLandingPage">首页</div>
+      <div class="step-box-bg">
+        <div class="step-box">
+          <el-steps :active="0" finish-status="success" align-center>
+            <el-step id="result-step" title="量表填写" />
+            <el-step title="您的结果" />
+          </el-steps>
+        </div>
       </div>
     </div>
     <div class="main-title">量表填写</div>
@@ -26,7 +28,6 @@
         <button class="clear-button" @click="clearForm">清空全部</button>
       </div>
     </div>
-
     <div class="main-carousel">
       <el-form :model="questionnaire" label-position="top">
         <el-carousel indicator-position="none" :autoplay="false" arrow="always">
@@ -45,6 +46,7 @@
 
     <div class="carousel-bg"></div>
     <div class="complete-button" @click="submitForm">完成填写</div>
+
   </div>
 </template>
 
@@ -53,16 +55,18 @@ import {ipAddress, questionnaire} from "../utils.js";
 import {ElMessage} from "element-plus";
 
 export default {
-  name: "Step1Questionnaire",
+  name: "SingleQuestionnaire",
   data(){
     return{
       questionnaire,
       answer:[],
       isUploading: false,
-      includeQuestionnaire: true,
     }
   },
   methods:{
+    backToLandingPage(){
+      this.$router.push('/');
+    },
     postDataToBackend(){
       console.log(this.answer)
       fetch(`http://${ipAddress}/upload-questionnaire-answer`, {
@@ -76,7 +80,7 @@ export default {
             if (response.ok) {
               console.log('questionnaire answer JSON data sent successfully');
               this.isUploading = false;
-              this.$router.push({name: 'step2-picwatch', query: {includeQuestionnaire: this.includeQuestionnaire}});
+              this.$router.push('/result');
             } else {
               console.error('Failed to send JSON data to backend.');
             }
@@ -108,5 +112,5 @@ export default {
 </script>
 
 <style scoped>
-@import "stylesheet/step1-questionnaire.css";
+@import "stylesheet/single-questionnaire.css";
 </style>
