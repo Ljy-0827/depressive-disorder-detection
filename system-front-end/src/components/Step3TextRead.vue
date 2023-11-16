@@ -4,9 +4,18 @@
          element-loading-text="请稍等，录音正在上传中" v-if="isUploading" >
     </div>
     <div class="step-box-bg">
-      <div class="step-box">
-        <el-steps :active="2" finish-status="success" align-center>
+      <div class="step-box" v-if="this.activeStep === 2">
+        <el-steps :active="this.activeStep" finish-status="success" align-center>
           <el-step title="量表填写" />
+          <el-step title="情绪图片观看" />
+          <el-step id="result-step" title="文字朗读" />
+          <el-step title="人脸图片描述" />
+          <el-step title="机器人访谈" />
+          <el-step title="您的结果" />
+        </el-steps>
+      </div>
+      <div class="step-box" v-if="this.activeStep === 1" >
+        <el-steps :active="this.activeStep" finish-status="success" align-center>
           <el-step title="情绪图片观看" />
           <el-step id="result-step" title="文字朗读" />
           <el-step title="人脸图片描述" />
@@ -66,8 +75,21 @@ export default {
       audioChunks: [],
       audioUrl: null,
       mediaRecorder: null,
+
+      includeQuestionnaire: true,
+      activeStep: 2,
     }
   },
+
+  mounted(){
+    this.includeQuestionnaire = this.$route.query.includeQuestionnaire;
+    if(this.includeQuestionnaire === true){
+      this.activeStep = 2;
+    }else{
+      this.activeStep = 1;
+    }
+  },
+
   methods:{
     testMic(){
 
@@ -134,7 +156,7 @@ export default {
             type: 'success',
           });
           this.isUploading = false;
-          this.$router.push('/result');
+          this.$router.push({name: 'step4-facedescribe', query: {includeQuestionnaire: this.includeQuestionnaire}});
         } else {
           ElMessage.error('录音上传失败');
           this.isUploading = false;

@@ -59,6 +59,7 @@ export default {
       questionnaire,
       answer:[],
       isUploading: false,
+      includeQuestionnaire: true,
     }
   },
   methods:{
@@ -75,7 +76,7 @@ export default {
             if (response.ok) {
               console.log('questionnaire answer JSON data sent successfully');
               this.isUploading = false;
-              this.$router.push('/step2_picwatch');
+              this.$router.push({name: 'step2-picwatch', query: {includeQuestionnaire: this.includeQuestionnaire}});
             } else {
               console.error('Failed to send JSON data to backend.');
             }

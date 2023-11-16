@@ -5,7 +5,7 @@
     <div class="main-description">内容描述占位内容描述占位内容描述内容描述占位内容描述占位内容描述</div>
 
     <div class="main-button" @click="start">综合检测</div>
-    <el-checkbox class="questionnaire-checkbox" v-model="this.isQuestionnaire" label="量表测试"></el-checkbox>
+    <el-checkbox class="questionnaire-checkbox" v-model="this.isQuestionnaire" label="量表测试" @change="console.log(this.isQuestionnaire)"></el-checkbox>
     <div class="main-box">
       <div class="box-title">多维度测试为您提供深入检测</div>
       <div class="box-border"></div>
@@ -17,9 +17,6 @@
           <div class="card-title">情绪图片观看</div>
           <div class="card-description">内容描述占位内容描述占位</div>
           <button class="single-test-button">单项测试</button>
-          <!--
-          <div class="know-more-button">了解更多</div>
-          -->
         </div>
         <div class="box-card">
           <div class="icon-bg">
@@ -60,9 +57,6 @@
           <div class="card-title">量表填写</div>
           <div class="card-description-large">使用PH-9量表进行全面的测评与数据分析</div>
           <button class="single-test-button">单项测试</button>
-          <!--
-          <div class="know-more-button">了解更多</div>
-          -->
         </div>
       </div>
     </div>
@@ -74,12 +68,17 @@ export default {
   name: "LandingPage",
   data(){
     return{
-      isQuestionnaire: true,
+      includeQuestionnaire: true,
     }
   },
   methods:{
     start(){
-      this.$router.push('/step1_questionnaire');
+      if(this.isQuestionnaire){
+        this.$router.push({name: 'step1-questionnaire', query: {includeQuestionnaire: this.includeQuestionnaire}});
+      }else{
+        this.$router.push({name: 'step2-picwatch', query: {includeQuestionnaire: this.includeQuestionnaire}});
+      }
+      //this.$router.push('/step1_questionnaire');
     }
   }
 }

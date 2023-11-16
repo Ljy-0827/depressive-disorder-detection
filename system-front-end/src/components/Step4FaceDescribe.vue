@@ -1,8 +1,17 @@
 <template>
   <div class="step-box-bg">
-    <div class="step-box">
-      <el-steps :active="3" finish-status="success" align-center>
+    <div class="step-box" v-if="this.activeStep === 3">
+      <el-steps :active="this.activeStep" finish-status="success" align-center>
         <el-step title="量表填写" />
+        <el-step title="情绪图片观看" />
+        <el-step title="文字朗读" />
+        <el-step id="result-step" title="人脸图片描述" />
+        <el-step title="机器人访谈" />
+        <el-step title="您的结果" />
+      </el-steps>
+    </div>
+    <div class="step-box" v-if="this.activeStep === 2" >
+      <el-steps :active="this.activeStep" finish-status="success" align-center>
         <el-step title="情绪图片观看" />
         <el-step title="文字朗读" />
         <el-step id="result-step" title="人脸图片描述" />
@@ -51,23 +60,35 @@ export default {
       isUploading: false,
       countdown: 3,
       timer: null,
+
+      activeStep: 3,
+      includeQuestionnaire: true,
     }
   },
+
   mounted() {
+    this.includeQuestionnaire = this.$route.query.includeQuestionnaire;
+    if(this.includeQuestionnaire === true){
+      this.activeStep = 3;
+    }else{
+      this.activeStep = 2;
+    }
     this.startCountdown();
   },
+
   methods:{
     startCountdown() {
-      this.countdown = 3; // 设置初始值为3
+      this.countdown = 3;
       this.timer = setInterval(() => {
         if (this.countdown > 0) {
           this.countdown--;
         } else {
-          clearInterval(this.timer); // 清除计时器
+          clearInterval(this.timer);  // 清除计时器
           this.openCamera();
         }
-      }, 1000); // 每秒执行一次
+      }, 1000);
     },
+
     async openCamera() {
       console.log(this.isRecording);
       this.isCameraOpen = true;
@@ -134,7 +155,7 @@ export default {
             type: 'success',
           });
           this.isUploading = false;
-          //this.$router.push({name: 'step-complete', query: {currentPage: '4'}});
+          this.$router.push({name: 'step5-interview', query: {includeQuestionnaire: this.includeQuestionnaire}});
         } else {
           ElMessage.error('录音上传失败');
           this.isUploading = false;

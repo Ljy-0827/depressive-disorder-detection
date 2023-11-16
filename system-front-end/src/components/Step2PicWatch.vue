@@ -4,9 +4,18 @@
          element-loading-text="请稍等，视频正在上传中" v-if="isUploading" >
     </div>
     <div class="step-box-bg">
-      <div class="step-box">
-        <el-steps :active="1" finish-status="success" align-center>
+      <div class="step-box" v-if="this.activeStep === 1">
+        <el-steps :active="this.activeStep" finish-status="success" align-center>
           <el-step title="量表填写" />
+          <el-step id="result-step" title="情绪图片观看" />
+          <el-step title="文字朗读" />
+          <el-step title="人脸图片描述" />
+          <el-step title="机器人访谈" />
+          <el-step title="您的结果" />
+        </el-steps>
+      </div>
+      <div class="step-box" v-if="this.activeStep === 0" >
+        <el-steps :active="this.activeStep" finish-status="success" align-center>
           <el-step id="result-step" title="情绪图片观看" />
           <el-step title="文字朗读" />
           <el-step title="人脸图片描述" />
@@ -56,6 +65,9 @@ export default {
       picCnt: 0,
       groupCnt: 1,
       picInterval: null,
+
+      includeQuestionnaire: true,
+      activeStep: 1,
     }
   },
   setup(){
@@ -67,6 +79,16 @@ export default {
       getImage
     }
   },
+
+  mounted() {
+    this.includeQuestionnaire = this.$route.query.includeQuestionnaire;
+    if(this.includeQuestionnaire === true){
+      this.activeStep = 1;
+    }else{
+      this.activeStep = 0;
+    }
+  },
+
   methods: {
     beginDisplayPic(){
       if(!this.isCameraOpen){
@@ -182,7 +204,7 @@ export default {
           this.allowNextStep = true;
           // 清空chunks数组，准备进行下一次录制
           this.chunks = [];
-          this.$router.push('/step3_textread');
+          this.$router.push({name: 'step3-textread', query: {includeQuestionnaire: this.includeQuestionnaire}});
         } else {
           ElMessage.error('视频上传失败');
           console.error('视频上传失败：', response.statusText);

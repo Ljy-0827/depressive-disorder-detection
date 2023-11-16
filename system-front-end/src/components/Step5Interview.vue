@@ -1,7 +1,19 @@
 <template>
   <div class="step-box-bg">
-    <div class="step-box">
-      <el-steps :active="4" finish-status="success" align-center>
+    <!-- 包含量表测评 进度条 -->
+    <div class="step-box" v-if="this.activeStep === 4">
+      <el-steps :active="this.activeStep" finish-status="success" align-center>
+        <el-step title="量表填写" />
+        <el-step title="情绪图片观看" />
+        <el-step title="文字朗读" />
+        <el-step title="人脸图片描述" />
+        <el-step id="result-step" title="机器人访谈" />
+        <el-step title="您的结果" />
+      </el-steps>
+    </div>
+    <!-- 不包含量表测评 进度条 -->
+    <div class="step-box" v-if="this.activeStep === 3">
+      <el-steps :active="this.activeStep" finish-status="success" align-center>
         <el-step title="量表填写" />
         <el-step title="情绪图片观看" />
         <el-step title="文字朗读" />
@@ -76,10 +88,19 @@ export default {
       isWaitingCheck: false,
       isPlaying: false,
       audioElement: null,
+
+      includeQuestionnaire: true,
+      activeStep: 4,
     }
   },
 
   mounted() {
+    this.includeQuestionnaire = this.$route.query.includeQuestionnaire;
+    if(this.includeQuestionnaire === true){
+      this.activeStep = 4;
+    }else{
+      this.activeStep = 3;
+    }
     this.startCountdown();
     this.initialQuestionAndAnswer();
   },
